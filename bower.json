@@ -1,0 +1,7 @@
+{
+  "name": "theme-dolce",
+  "dependencies": {
+    "uikit": "#master"
+  },
+  "private": true
+}
