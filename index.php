@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'theme-dolce',
+    'name' => 'theme-aurora',
 
     /**
      * Menu positions
