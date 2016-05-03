@@ -11,24 +11,26 @@
 
 @comment-avatar-margin-right:                   @global-margin;
 
-@comment-title-margin-top:                      0;
-@comment-title-font-size:                       @global-font-size;
-@comment-title-line-height:                     @global-line-height;
+@comment-title-font-size:                       round((@global-font-size * 1.14)); // 16px
+@comment-title-line-height:                     round((@comment-title-font-size * 1.37)); // 22px
 
-@comment-meta-margin-top:                       0;
 @comment-meta-color:                            @global-muted-color;
-@comment-meta-font-size:                        round((@global-font-size * 0.78)); // 12px
-@comment-meta-line-height:                      round((@comment-meta-font-size * 1.49)); // 18px
+@comment-meta-font-size:                        round((@global-font-size * 0.78)); // 11px
+@comment-meta-line-height:                      round((@comment-meta-font-size * 1.45)); // 16px
 
-@comment-list-margin-top:                       @global-margin + 10px;
+@comment-list-margin-top:                       @global-margin;
+
 
 //
 // New
 //
 
-@comment-primary-padding:                        @global-margin;
-@comment-primary-background:                     @global-default-hover-background;
+@comment-border-width:                          @global-border-width;
+@comment-border-radius:                         @global-border-radius;
+@comment-border:                                @global-border;
 
+@comment-primary-border:                        @global-primary-background;
+@comment-primary-title-color:                   @global-primary-background;
 
 
 // Component
@@ -46,13 +48,13 @@
 // Sub-object `uk-comment-avatar`
 // ========================================================================
 
-.hook-comment-avatar() { border-radius: 500px; }
+.hook-comment-avatar() {}
 
 
 // Sub-object `uk-comment-title`
 // ========================================================================
 
-.hook-comment-title() { font-weight: 400; }
+.hook-comment-title() {}
 
 
 // Sub-object `uk-comment-meta`
@@ -70,13 +72,26 @@
 // Sub-object `uk-comment-primary`
 // ========================================================================
 
-.hook-comment-primary() {
-    padding: @comment-primary-padding;
-    background: @comment-primary-background;
-}
+.hook-comment-primary() {}
 
 
 // Miscellaneous
 // ========================================================================
 
-.hook-comment-misc() {}
+.hook-comment-misc() {
+
+    .uk-comment {
+        padding: 15px;
+        border: @comment-border-width solid @comment-border;
+        border-radius: @comment-border-radius;
+    }
+
+    .uk-comment-primary {
+
+        border-color: @comment-primary-border;
+
+        .uk-comment-title { color: @comment-primary-title-color; }
+
+    }
+
+}

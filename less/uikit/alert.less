@@ -9,23 +9,30 @@
 
 @alert-margin-vertical:                         @global-margin;
 
-@alert-background:                              @global-default-background;
-@alert-color:                                   @global-color;
+@alert-background:                              @global-primary-background;
+@alert-color:                                   @global-contrast-color;
 
-@alert-success-background:                      #ecf7e9;
-@alert-success-color:                           #80c96d;
+@alert-success-background:                      @global-success-background;
+@alert-success-color:                           @global-contrast-color;
 
-@alert-warning-background:                      #fff0e0;
-@alert-warning-color:                           #ff9a2e;
+@alert-warning-background:                      @global-warning-background;
+@alert-warning-color:                           @global-contrast-color;
 
-@alert-danger-background:                       #fde7e7;
-@alert-danger-color:                            #F05D54;
+@alert-danger-background:                       @global-danger-background;
+@alert-danger-color:                            @global-contrast-color;
+
+
+//
+// New
+//
+
+@alert-border-radius:                           @global-border-radius;
 
 
 // Component
 // ========================================================================
 
-.hook-alert() {}
+.hook-alert() { border-radius: @alert-border-radius; }
 
 
 // Modifier: `uk-alert-success`
@@ -49,9 +56,4 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-alert-misc() {
-
-    .uk-alert .uk-close { opacity: 0.2; }
-    .uk-alert .uk-close:hover { opacity: 1; }
-
-}
+.hook-alert-misc() {}

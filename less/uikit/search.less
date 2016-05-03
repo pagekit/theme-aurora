@@ -7,18 +7,23 @@
 // Variables
 // ========================================================================
 
-@search-height:                                 @global-height;
-@search-padding:                                35px;
-@search-border-width:                           0;
+@search-width:                                  160px;
+@search-focus-width:                            220px;
+@search-height:                                 @global-height-large;
+@search-padding:                                @global-height-large;
+
+@search-border:                                 @global-border;
+@search-border-width:                           @global-border-width;
+@search-background:                             rgba(0,0,0,0);
 @search-color:                                  @global-color;
 @search-placeholder-color:                      @global-muted-color;
 
-@search-icon:                                   "";
-
-@dropdown-search-background:                    #fff;
 @dropdown-search-color:                         @global-color;
 @dropdown-search-navbar-margin-top:             5px;
 @dropdown-search-navbar-margin-right:           -15px;
+
+@search-icon-size:                              13px;
+@search-icon-color:                             @global-muted-color;
 
 @nav-search-color:                              @global-color;
 @nav-search-active-background:                  @global-primary-background;
@@ -28,27 +33,34 @@
 @nav-search-nested-color:                       @global-link-color;
 @nav-search-nested-hover-color:                 @global-link-hover-color;
 
+// Search in offcanvas
+@offcanvas-search-margin:                       @global-margin;
+@offcanvas-search-background:                   darken(@offcanvas-bar-background, 4%);
+@offcanvas-search-border:                       rgba(0,0,0,0);
+@offcanvas-search-color:                        @offcanvas-panel-link-color;
+@offcanvas-search-placeholder-color:            @offcanvas-panel-color;
+@offcanvas-search-icon-color:                   @offcanvas-panel-color;
+
+
+//
+// New
+//
+
+@search-border-radius:                          @global-border-radius;
+
 
 // Component
 // ========================================================================
 
-.hook-search() { z-index: 1; }
+.hook-search() {}
 
-.hook-search-icon() {
-    height: @global-height;
-    background: url("@{global-image-path}/search.svg") 50% 50% no-repeat;
-    z-index: -1;
-}
+.hook-search-icon() { top: 2px; }
 
 
 // Sub-object `uk-search-field`
 // ========================================================================
 
-.hook-search-field() {
-    padding-left: (@search-padding + 10px);
-    font-size: 18px;
-    font-weight: 300;
-}
+.hook-search-field() { border-radius: @search-border-radius; }
 
 .hook-search-field-focus() {}
 

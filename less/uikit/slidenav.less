@@ -7,15 +7,37 @@
 // Variables
 // ========================================================================
 
+@slidenav-width:                                50px;
+@slidenav-height:                               @slidenav-width;
+@slidenav-font-size:                            @slidenav-width;
+@slidenav-line-height:                          @slidenav-height;
+
+@slidenav-position-previous:                    @global-grid-gutter-large;
+@slidenav-position-next:                        @slidenav-position-previous;
+
+@slidenav-color:                                fade(@global-highlight-color, 70%);
+@slidenav-hover-color:                          fade(@global-highlight-color, 90%);
+@slidenav-active-color:                         @global-highlight-color;
+
+@slidenav-contrast-color:                       @global-contrast-color;
+@slidenav-contrast-hover-color:                 fade(@slidenav-contrast-color, 70%);
+@slidenav-contrast-active-color:                fade(@slidenav-contrast-color, 90%);
+
 
 // Component
 // ========================================================================
 
-.hook-slidenav() {}
+.hook-slidenav() {
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
 
 .hook-slidenav-hover() {}
 
-.hook-slidenav-active() {}
+.hook-slidenav-active() {
+    -webkit-transform: @global-active-transform;
+    transform: @global-active-transform;
+}
 
 .hook-slidenav-contrast() {}
 

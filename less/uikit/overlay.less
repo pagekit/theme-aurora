@@ -9,9 +9,45 @@
 
 @overlay-panel-color:                           @global-contrast-color;
 
-@overlay-icon:                                  "";
-@overlay-icon-size:                             34px;
 @overlay-icon-color:                            @global-contrast-color;
+
+//
+// New
+//
+
+@overlay-button-border:                         @global-contrast-color;
+@overlay-button-background:                     fade(@global-contrast-color, 0%);
+@overlay-button-color:                          @global-contrast-color;
+
+@overlay-button-hover-border:                   fade(@global-contrast-color, 0%);;
+@overlay-button-hover-background:               @global-contrast-color;
+@overlay-button-hover-color:                    @global-color;
+
+@overlay-button-active-border:                  @overlay-button-hover-border;
+@overlay-button-active-background:              fade(@overlay-button-hover-background, 80%);
+@overlay-button-active-color:                   darken(@overlay-button-hover-color, 5%);
+
+@overlay-icon-button-border:                    fade(@global-contrast-color, 40%);
+@overlay-icon-button-background:                fade(@global-contrast-color, 0%);
+@overlay-icon-button-color:                     fade(@global-contrast-color, 70%);
+
+@overlay-icon-button-hover-border:              @global-contrast-color;
+@overlay-icon-button-hover-background:          @overlay-icon-button-background;
+@overlay-icon-button-hover-color:               @global-contrast-color;
+
+@overlay-icon-button-active-border:             fade(@global-contrast-color, 0%);
+@overlay-icon-button-active-background:         @global-contrast-color;
+@overlay-icon-button-active-color:              @global-highlight-background;
+
+// DEPRECATED
+@overlay-area-background:                       fade(@global-highlight-background, 60%);
+
+@overlay-area-icon-size:                        24px;
+@overlay-area-icon-color:                       @global-contrast-color;
+
+@overlay-caption-padding:                       @global-margin;
+@overlay-caption-background:                    fade(@global-primary-background, 60%);
+@overlay-caption-color:                         @global-contrast-color;
 
 
 // Sub-object `uk-overlay-panel`
@@ -23,23 +59,69 @@
 // Sub-object `uk-overlay-background`
 // ========================================================================
 
-.hook-overlay-background() {}
+.hook-overlay-background() {
 
+    // uk-button in uk-overlay-background
+    .uk-button {
 
-// Sub-object `uk-overlay-image`
-// ========================================================================
+        border-color: @overlay-button-border;
+        background: @overlay-button-background;
+        color: @overlay-button-color;
 
-.hook-overlay-image() {}
+        // Hover event
+        &:hover {
+            border-color: @overlay-button-hover-border;
+            background: @overlay-button-hover-background;
+            color: @overlay-button-hover-color;
+        }
+
+        // Click event
+        &:active {
+            border-color: @overlay-button-active-border;
+            background: @overlay-button-active-background;
+            color: @overlay-button-active-color;
+        }
+
+    }
+
+    // uk-icon-button in uk-overlay
+    .uk-icon-button {
+
+        border-color: @overlay-icon-button-border;
+        background: @overlay-icon-button-background;
+        color: @overlay-icon-button-color;
+
+        // Hover event
+        &:hover {
+            border-color: @overlay-icon-button-hover-border;
+            background: @overlay-icon-button-hover-background;
+            color: @overlay-icon-button-hover-color;
+        }
+
+        // Click event
+        &:active {
+            border-color: @overlay-icon-button-active-border;
+            background: @overlay-icon-button-active-background;
+            color: @overlay-icon-button-active-color;
+        }
+
+    }
+
+}
 
 
 // Sub-object `uk-overlay-icon`
 // ========================================================================
 
-.hook-overlay-icon() {
-    height: 34px;
-    width: 34px;
-    background: url("@{global-image-path}/overlay-plus.svg") 0 0 no-repeat;
-}
+.hook-overlay-icon() {}
+
+
+// Sub-object `uk-overlay-area`
+// ==========================================================================
+
+.hook-overlay-area() {}
+
+.hook-overlay-area-icon() {}
 
 
 // Miscellaneous

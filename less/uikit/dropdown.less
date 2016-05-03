@@ -7,42 +7,66 @@
 // Variables
 // ========================================================================
 
-@dropdown-z-index:                              @global-z-index + 20;
+@dropdown-z-index:                              (@global-z-index + 20);
 @dropdown-margin-top:                           10px;
-@dropdown-padding:                              25px;
-@dropdown-background:                           #fff;
+@dropdown-width:                                200px;
+@dropdown-background:                           @global-light-background;
 @dropdown-color:                                @global-color;
-@dropdown-font-size:                            14px;
+@dropdown-animation:                            uk-slide-bottom;
 
 @dropdown-divider-border:                       @global-border;
+@dropdown-divider-border-width:                 @global-border-width;
 
-@dropdown-small-padding:                        @dropdown-padding;
-
-@dropdown-navbar-margin:                        20px;
-@dropdown-navbar-background:                    #fff;
+@dropdown-navbar-margin:                        @dropdown-navbar-nose-size;
+@dropdown-navbar-background:                    @global-light-background;
 @dropdown-navbar-color:                         @global-color;
-@dropdown-navbar-animation:                     uk-fade;
+@dropdown-navbar-animation:                     uk-slide-bottom;
+
+
+//
+// New
+//
+
+@dropdown-border-radius:                        @global-border-radius;
+
+@dropdown-navbar-nose-size:                     12px;
+@dropdown-navbar-nose-border-radius:            @global-border-radius;
+@dropdown-navbar-nose-background:               @dropdown-navbar-background;
+
+@dropdown-navbar-divider-border:                @dropdown-divider-border;
+
+@dropdown-navbar-panel-link-color:              @global-link-color;
+@dropdown-navbar-panel-link-hover-color:        @global-link-hover-color;
 
 
 // Component
 // ========================================================================
 
-.hook-dropdown() {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    line-height: 20px;
-}
+.hook-dropdown() { border-radius: @dropdown-border-radius; }
 
 
 // Modifier: `uk-dropdown-navbar`
 // ========================================================================
 
-.hook-dropdown-navbar() {}
+.hook-dropdown-navbar() {
 
+    &:before {
+        z-index: -1;
+        display: block;
+        content: "";
+        position: absolute;
+        top: -(@dropdown-navbar-nose-size / 2.3);
+        left: @dropdown-navbar-nose-size * 1.2;
+        width: @dropdown-navbar-nose-size;
+        height: @dropdown-navbar-nose-size;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border-radius: @dropdown-navbar-nose-border-radius;
+        background: @dropdown-navbar-nose-background;
+    }
 
-// Sub-object: `uk-dropdown-overlay`
-// ========================================================================
-
-.hook-dropdown-overlay() {}
+}
 
 
 // Miscellaneous
@@ -50,8 +74,46 @@
 
 .hook-dropdown-misc() {
 
-    .uk-dropdown > .uk-nav { margin: (15px - @dropdown-padding) (-@dropdown-padding); }
+    /* uk-dropdown nose */
+    .uk-dropdown-center {
 
-    .uk-dropdown-small > .uk-nav { margin: (15px - @dropdown-small-padding) (-@dropdown-small-padding); }
+        &:before { left: 48%; }
 
+    }
+
+    .uk-dropdown-flip {
+
+        &:before {
+            left: auto;
+            right: (@dropdown-navbar-nose-size * 1.2);
+        }
+
+    }
+
+    /* Grid and panel in dropdown
+     ========================================================================== */
+
+     /* uk-dropdown-navbar panel link color */
+    .uk-dropdown-navbar {
+
+        .uk-panel {
+
+            > a:not([class]) {
+
+                color: @dropdown-navbar-panel-link-color;
+
+                &:hover { color: @dropdown-navbar-panel-link-hover-color; }
+
+            }
+
+        }
+
+    }
+
+    /* Only tablets and desktops */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-dropdown-navbar:not(.uk-dropdown-stack) > .uk-grid > [class*='uk-width-']:nth-child(n+2) { border-left-color: @dropdown-navbar-divider-border; }
+
+    }
 }

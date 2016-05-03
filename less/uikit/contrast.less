@@ -3,36 +3,18 @@
 //
 // ========================================================================
 
-@contrast-color:                                 @global-contrast-color;
-@contrast-inverted-color:                        #333;
 
-@contrast-tab-hover-background:                  none;
-@contrast-tab-hover-color:                       @contrast-color;
-@contrast-tab-active-background:                 none;
-@contrast-tab-active-color:                      @contrast-color;
+// Variables
+// ========================================================================
 
-@contrast-button-color:                          @contrast-color;
-@contrast-button-background:                     rgba(0,0,0,0);
-@contrast-button-hover-color:                    @global-dark-color;
-@contrast-button-hover-background:               @contrast-color;
-@contrast-button-active-background:              @contrast-color;
-@contrast-button-active-color:                   @global-dark-color;
-
-//
-// New
-//
-
-@contrast-button-border:                         @contrast-color;
-@contrast-button-hover-border:                   fade(@contrast-color, 70%);
+@contrast-color:                                @global-contrast-color;
+@contrast-inverted-color:                       @global-highlight-background;
 
 
 // Base
 // ========================================================================
 
-.hook-contrast-base-code() {
-    border-color: fade(@contrast-color, 20%);
-    background: fade(@contrast-color, 10%);
-}
+.hook-contrast-base-code() { background: fade(@global-contrast-color, 10%); }
 
 
 // Nav
@@ -56,19 +38,17 @@
 .hook-contrast-subnav-pill-active() {}
 
 
+// List
+// ========================================================================
+
+.hook-contrast-list-line() {}
+
 // Tab
 // ========================================================================
 
 .hook-contrast-tab() {}
 .hook-contrast-tab-hover() {}
 .hook-contrast-tab-active() {}
-
-
-// List
-// ========================================================================
-
-.hook-contrast-list-line() {}
-
 
 // Form
 // ========================================================================
@@ -80,21 +60,13 @@
 // Button
 // ========================================================================
 
-.hook-contrast-button() {
-
-    &:not(.uk-button-primary) { border-color: @contrast-button-border; }
-
-}
-
-.hook-contrast-button-hover() {
-
-    &:not(.uk-button-primary) { border-color: @contrast-button-hover-border; }
-
-}
-
+.hook-contrast-button() { border: none; }
+.hook-contrast-button-hover() {}
 .hook-contrast-button-active() {}
-.hook-contrast-button-primary() {}
-
+.hook-contrast-button-primary() {
+    background: @global-primary-background;
+    color: @contrast-color;
+}
 .hook-contrast-button-primary-hover() {}
 .hook-contrast-button-primary-active() {}
 
@@ -112,4 +84,8 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-contrast-misc() {}
+.hook-contrast-misc() {
+
+    .uk-subnav-pill > * > * { border: none; }
+
+}

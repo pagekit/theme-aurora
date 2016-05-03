@@ -7,42 +7,43 @@
 // Variables
 // ========================================================================
 
-@icon-hover-color:                              @global-muted-color;
-@icon-hover-hover-color:                        @global-color;
-
+@icon-button-width:                             36px;
 @icon-button-height:                            @icon-button-width;
-@icon-button-background:                        @global-primary-background;
-@icon-button-font-size:                         round((@icon-button-width * 0.5));
-@icon-button-color:                             @global-contrast-color;
+@icon-button-border-radius:                     50%;
+@icon-button-font-size:                         20px;
+@icon-button-background:                        rgba(0,0,0,0);
+@icon-button-color:                             @global-color;
 
-@icon-button-hover-background:                  @global-primary-hover-background;
+@icon-hover-color:                              @global-muted-color;
+@icon-hover-hover-color:                        @global-highlight-color;
+
+@icon-button-hover-background:                  @global-primary-background;
 @icon-button-hover-color:                       @global-contrast-color;
 
-@icon-button-active-background:                 @global-primary-active-background;
+@icon-button-active-background:                 @global-highlight-background;
 @icon-button-active-color:                      @global-contrast-color;
 
 
-// Modifier: `uk-icon-hover`
-// ========================================================================
+//
+// New
+//
 
-.hook-icon-hover() {
-    -webkit-transition: color 0.05s linear;
-    transition: color 0.05s linear;
-}
-
-.hook-icon-hover-hover() {}
+@icon-button-border-width:                      @global-border-width;
+@icon-button-border:                            @global-border;
+@icon-button-hover-border:                      @global-primary-background;
+@icon-button-active-border:                     @global-highlight-background;
 
 
 // Modifier: `uk-icon-button`
 // ========================================================================
 
-.hook-icon-button() {}
+.hook-icon-button() { border: @icon-button-border-width solid @icon-button-border; }
 
 // Hover
-.hook-icon-button-hover() {}
+.hook-icon-button-hover() { border-color: @icon-button-hover-border; }
 
 // Active
-.hook-icon-button-active() {}
+.hook-icon-button-active() { border-color: @icon-button-active-border; }
 
 
 // Miscellaneous

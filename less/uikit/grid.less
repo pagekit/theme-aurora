@@ -13,10 +13,25 @@
 @grid-gutter-large-horizontal:                  @global-grid-gutter-large;
 @grid-gutter-large-vertical:                    @global-grid-gutter-large;
 
+@grid-gutter-small-horizontal:                  @global-grid-gutter-small;
+@grid-gutter-small-vertical:                    @global-grid-gutter-small;
+
 @grid-divider-border:                           @global-border;
 
 
 // Miscellaneous
 // ========================================================================
 
-.hook-grid-misc() {}
+.hook-grid-misc() {
+
+    .uk-grid-divider.uk-grid.uk-grid-small:not(:empty) {
+        margin-left: -@grid-gutter-small-horizontal;
+        margin-right: -@grid-gutter-small-horizontal;
+    }
+
+    .uk-grid-divider.uk-grid.uk-grid-small > * {
+        padding-left: @grid-gutter-small-horizontal;
+        padding-right: @grid-gutter-small-horizontal;
+    }
+
+}

@@ -1,0 +1,229 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,700';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400';
+
+
+// Global variables
+// ========================================================================
+
+// Theme Font
+@global-font-path: "../../../less/uikit/fonts";
+
+// Images
+@global-image-path: '../../../less/uikit/images';
+
+//
+// Text
+//
+
+@global-color:                                          #888;
+@global-muted-color:                                    #5f5f5f;
+@global-highlight-color:                                #fff;
+@global-contrast-color:                                 #fff;
+
+@global-link-color:                                     #36b9c1;
+@global-link-hover-color:                               darken(@global-link-color, 10%);
+
+@global-primary-link-color:                             #fff8c8;
+@global-primary-link-hover-color:                       @global-contrast-color;
+
+@global-primary-color:                                  @global-contrast-color;
+@global-secondary-color:                                #999;
+@global-success-color:                                  #9fc572;
+@global-warning-color:                                  #e49362;
+@global-danger-color:                                   #e15e5e;
+
+@global-font-weight:                                    400;
+@global-bold-font-weight:                               700;
+@global-heading-font-weight:                            400;
+
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                                     #222;
+@global-light-background:                               #2d2d2d;
+@global-highlight-background:                           #4f4f4f;
+@global-highlight-hover-background:                     lighten(@global-highlight-background, 4%);
+
+@global-primary-background:                             #36b9c1;
+@global-secondary-background:                           #303030;
+
+@global-border:                                         rgba(255,255,255,0.08);
+
+
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+//
+// Base
+//
+
+@base-body-font-family:                                 'Open Sans', Helvetica, Arial, sans-serif;
+@base-heading-font-family:                              'Montserrat', Helvetica, Arial, sans-serif;
+@base-heading-text-transform:                           uppercase;
+
+@base-h1-font-size:                                     round((@global-font-size * 1.86)); // 28px
+@base-h1-line-height:                                   round((@base-h1-font-size * 1.35)); // 38px
+@base-h2-font-size:                                     round((@global-font-size * 1.6)); // 24px
+@base-h2-line-height:                                   round((@base-h2-font-size * 1.33)); // 32px
+@base-h3-font-size:                                     round((@global-font-size * 1.2)); // 18px
+@base-h3-line-height:                                   round((@base-h3-font-size * 1.22)); // 22px
+@base-h4-font-size:                                     round((@global-font-size * 1.06)); // 16px
+@base-h4-line-height:                                   round((@base-h4-font-size * 1.18)); // 19px
+@base-h5-font-size:                                     @global-font-size; // 15px
+@base-h5-line-height:                                   round((@base-h5-font-size * 1.2)); // 18px
+@base-h6-font-size:                                     round((@global-font-size * 0.86)); // 13px
+@base-h6-line-height:                                   round((@global-font-size * 1.23)); // 16px
+
+@base-font-smoothing:                                   antialiased;
+@base-osx-font-smoothing:                               grayscale;
+
+
+//
+// Article
+//
+
+@article-title-font-size:                               round((@global-font-size * 1.86)); // 28px
+@article-title-line-height:                             round((@article-title-font-size * 1.21)); // 34px
+@article-title-text-transform:                          uppercase;
+
+
+//
+// Button
+//
+
+@button-font-size:                                      round((@global-font-size * 0.93)); // 14px
+@button-font-family:                                    'Montserrat', Helvetica, Arial, sans-serif;
+@button-font-weight:                                    400;
+
+@button-background:                                     @global-highlight-background;
+@button-color:                                          @global-contrast-color;
+@button-hover-background:                               darken(@button-background, 3%);
+
+@button-primary-background:                             @global-primary-background;
+@button-primary-color:                                  @global-contrast-color;
+@button-primary-hover-background:                       desaturate(darken(@button-primary-background, 3%), 6%);
+
+@button-success-background:                             @global-success-background;
+@button-success-color:                                  @global-contrast-color;
+@button-success-hover-background:                        desaturate(darken(@button-success-background, 5%), 6%);
+
+@button-danger-background:                              @global-danger-background;
+@button-danger-color:                                   @global-contrast-color;
+@button-danger-hover-background:                         desaturate(darken(@button-danger-background, 5%), 6%);
+
+@button-active-shadow:                                  fade(@global-background, 15%);
+
+
+//
+// Nav
+//
+
+@nav-side-hover-background:                             rgba(255,255,255,0.08);
+
+@nav-offcanvas-hover-background:                        lighten(@offcanvas-bar-background, 10%);
+@nav-offcanvas-active-background:                       lighten(@offcanvas-bar-background, 5%);
+
+
+//
+// Navbar
+//
+
+@navbar-nav-font-family:                                'Montserrat', Helvetica, Arial, sans-serif;
+
+
+//
+// Offcanvas
+//
+
+@offcanvas-background:                                  fade(@offcanvas-bar-background, 30%);
+
+@offcanvas-bar-background:                              #111;
+
+@offcanvas-panel-color:                                 @global-color;
+@offcanvas-panel-title-color:                           @global-contrast-color;
+@offcanvas-panel-link-color:                            @global-contrast-color;
+@offcanvas-panel-link-hover-color:                      @global-link-color;
+
+
+//
+// Panel
+//
+
+@panel-title-font-size:                                 round((@global-font-size * 1.2)); // 18px
+@panel-title-line-height:                               round((@panel-title-font-size * 1.22)); // 22px
+@panel-title-text-transform:                            uppercase;
+
+@panel-hover-hover-background:                          lighten(@panel-hover-background, 2%);
+@panel-hover-border:                                    @panel-hover-hover-background;
+
+
+//
+// Thumbnail
+//
+
+@thumbnail-background:                                  @global-light-background;
+@thumbnail-hover-border:                                lighten(@global-light-background, 5%);
+@thumbnail-hover-background:                            lighten(@global-light-background, 3%);
+
+
+// Theme variables
+// ========================================================================
+
+@global-body-style:                                     'turquoise';
+
+@theme-body-background:                                 #1c1c1c;
+@theme-border:                                          rgba(0,0,0,0);
+
+
+//
+// Sidebar
+//
+
+@theme-sidebar-navbar-nav-font-weight:                  @global-font-weight;
+
+@theme-sidebar-navbar-nav-border:                       rgba(255,255,255,0.08);
+@theme-sidebar-navbar-nav-color:                        @global-color;
+@theme-sidebar-navbar-nav-hover-color:                  lighten(@global-color, 25%);
+@theme-sidebar-navbar-nav-onclick-color:                @theme-sidebar-navbar-nav-active-color;
+@theme-sidebar-navbar-nav-active-color:                 @global-link-color;
+
+@theme-sidebar-navbar-nav-before-background:            rgba(255,255,255,0.18);
+
+@theme-sidebar-navbar-nav-before-hover-background:      @theme-sidebar-navbar-nav-active-color;
+
+@theme-sidebar-navbar-nav-before-active-background:     @theme-sidebar-navbar-nav-active-color;
+
+@theme-sidebar-panel-title-color:                       @theme-sidebar-navbar-nav-active-color;
+@theme-sidebar-panel-color:                             @global-contrast-color;
+@theme-sidebar-panel-link-color:                        @theme-sidebar-panel-title-color;
+@theme-sidebar-panel-link-hover-color:                  @global-contrast-color;
+
+@theme-sidebar-social-border-top:                       rgba(0,0,0,0);
+@theme-sidebar-social-background:                       rgba(0,0,0,0.2);
+@theme-sidebar-social-color:                            @global-contrast-color;
+@theme-sidebar-social-hover-color:                      @global-link-color;
+
+@theme-footer-border:                                   @theme-body-background;
+
+
+//
+// Content
+//
+
+@theme-border:                                          @theme-body-background;
+
+@theme-content-block-border:                            @theme-body-background;
+
+
+//
+// Widgetkit Bonus Style: Gallery
+//
+
+@wk-button-color:                                       fade(@global-color, 50%);
+@wk-button-hover-color:                                 @global-link-color;
+@wk-button-active-color:                                @global-color;

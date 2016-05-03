@@ -1,0 +1,204 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700';
+
+
+// Global variables
+// ========================================================================
+
+// Theme Font
+@global-font-path: "../../../less/uikit/fonts";
+
+// Images
+@global-image-path: '../../../less/uikit/images';
+
+//
+// Text
+//
+
+@global-color:                                          #8a8d9c;
+@global-muted-color:                                    #717380;
+@global-highlight-color:                                #fff;
+@global-contrast-color:                                 #fff;
+
+@global-link-color:                                     #ffd180;
+@global-link-hover-color:                               darken(@global-link-color, 10%);
+
+@global-primary-link-color:                             #ba4c26;
+@global-primary-link-hover-color:                       darken(@global-primary-link-color, 10%);
+
+@global-primary-color:                                  #552e0e;
+@global-secondary-color:                                #bcbecb;
+@global-success-color:                                  #9fc572;
+@global-warning-color:                                  #e49362;
+@global-danger-color:                                   #e15e5e;
+
+
+//
+// Backgrounds & Borders
+//
+
+@global-background:                                     #373841;
+@global-light-background:                               #43444e;
+@global-highlight-background:                           #70727f;
+@global-highlight-hover-background:                     lighten(@global-highlight-background, 4%);
+
+@global-primary-background:                             #ffd180;
+@global-secondary-background:                           #575965;
+
+@global-border:                                         rgba(230,231,242,0.08);
+
+
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+//
+// Alert
+//
+
+@alert-color:                                           @global-primary-color;
+
+
+//
+// Button
+//
+
+@button-primary-hover-color:                            @global-primary-color;
+@button-primary-active-color:                           @global-primary-color;
+
+@button-active-shadow:                                  fade(@global-background, 15%);
+
+
+//
+// Nav
+//
+
+@nav-navbar-hover-color:                                @global-primary-color;
+@nav-side-hover-background:                             rgba(230,231,242,0.08);
+@nav-side-active-color:                                 @global-primary-color;
+
+@nav-dropdown-hover-color:                              @global-primary-color;
+
+@nav-navbar-hover-color:                                @global-primary-color;
+
+
+//
+// Navbar
+//
+
+@navbar-nav-active-color:                               @global-primary-color;
+
+
+//
+// Offcanvas
+//
+
+@offcanvas-background:                                  fade(@offcanvas-bar-background, 30%);
+
+@offcanvas-bar-background:                              #202228;
+
+@offcanvas-panel-color:                                 @global-color;
+@offcanvas-panel-title-color:                           @global-contrast-color;
+@offcanvas-panel-link-color:                            @global-contrast-color;
+@offcanvas-panel-link-hover-color:                      @global-link-color;
+
+
+//
+// Pagination
+//
+
+@pagination-active-color:                               @global-primary-color;
+
+
+//
+// Panel
+//
+
+@panel-box-primary-title-color:                         @global-primary-color;
+
+@panel-hover-hover-background:                          lighten(@panel-hover-background, 4%);
+@panel-hover-border:                                    @panel-hover-hover-background;
+
+
+//
+// Progress
+//
+
+@progress-bar-color:                                    @global-primary-color;
+
+
+//
+// Subnav
+//
+
+@subnav-pill-hover-color:                               @global-primary-color;
+@subnav-pill-active-color:                              @global-primary-color;
+
+
+//
+// Thumbnail
+//
+
+@thumbnail-background:                                  @global-light-background;
+@thumbnail-hover-border:                                lighten(@global-light-background, 5%);
+@thumbnail-hover-background:                            lighten(@global-light-background, 3%);
+
+
+// Theme variables
+// ========================================================================
+
+@global-body-style:                                     'yellow';
+
+@theme-body-background:                                 #282931;
+@theme-border:                                          rgba(0,0,0,0);
+
+//
+// Sidebar
+//
+
+@theme-sidebar-background:                              #2c2e36;
+
+@theme-sidebar-navbar-nav-font-weight:                  @global-font-weight;
+
+@theme-sidebar-navbar-nav-border:                       fade(#edefff, 8%);
+@theme-sidebar-navbar-nav-color:                        #9c9ead;
+@theme-sidebar-navbar-nav-hover-color:                  @global-contrast-color;
+@theme-sidebar-navbar-nav-onclick-color:                @theme-sidebar-navbar-nav-active-color;
+@theme-sidebar-navbar-nav-active-color:                 @global-link-color;
+
+@theme-sidebar-navbar-nav-before-background:            fade(#edefff, 30%);
+
+@theme-sidebar-navbar-nav-before-hover-background:      @theme-sidebar-navbar-nav-active-color;
+
+@theme-sidebar-navbar-nav-before-active-background:     @theme-sidebar-navbar-nav-active-color;
+
+@theme-sidebar-panel-title-color:                       @theme-sidebar-navbar-nav-active-color;
+@theme-sidebar-panel-color:                             #717483;
+@theme-sidebar-panel-link-color:                        @theme-sidebar-panel-title-color;
+@theme-sidebar-panel-link-hover-color:                  @global-contrast-color;
+
+@theme-sidebar-social-border-top:                       rgba(0,0,0,0);
+@theme-sidebar-social-background:                       rgba(0,0,0,0.15);
+@theme-sidebar-social-color:                            @theme-sidebar-panel-color;
+@theme-sidebar-social-hover-color:                      @theme-sidebar-panel-title-color;
+
+@theme-footer-border:                                   @theme-body-background;
+
+
+//
+// Content
+//
+
+@theme-border:                                          @theme-body-background;
+
+@theme-content-block-border:                            @theme-body-background;
+
+
+//
+// Widgetkit Bonus Style: Gallery
+//
+
+@wk-button-color:                                       fade(@global-color, 50%);
+@wk-button-hover-color:                                 @global-link-color;
+@wk-button-active-color:                                @global-color;

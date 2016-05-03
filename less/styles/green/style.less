@@ -1,0 +1,117 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700';
+
+
+// Global variables
+// ========================================================================
+
+// Theme Font
+@global-font-path: "../../../less/uikit/fonts";
+
+// Images
+@global-image-path: '../../../less/uikit/images';
+
+//
+// Text
+//
+
+@global-color:                                          #6b6966;
+@global-muted-color:                                    #93918e;
+@global-highlight-color:                                #3c3831;
+
+@global-link-color:                                     #79a65a;
+@global-link-hover-color:                               darken(@global-link-color, 10%);
+
+@global-primary-link-color:                             #fff8c8;
+@global-primary-link-hover-color:                       @global-contrast-color;
+
+@global-primary-color:                                  @global-contrast-color;
+@global-secondary-color:                                #6a6a61;
+@global-success-color:                                  #9fc572;
+@global-warning-color:                                  #e49362;
+@global-danger-color:                                   #e15e5e;
+
+
+//
+// Backgrounds & Borders
+//
+
+@global-primary-background:                             #79a65a;
+@global-secondary-background:                           #f6f6f3;
+
+@global-border-radius:                                  2px;
+
+
+//
+// Component: Variables
+//
+// ========================================================================
+
+
+//
+// Button
+//
+
+@button-background:                                     @global-highlight-background;
+@button-color:                                          @global-contrast-color;
+@button-hover-background:                               darken(@button-background, 3%);
+
+@button-primary-background:                             @global-primary-background;
+@button-primary-color:                                  @global-contrast-color;
+@button-primary-hover-background:                       darken(@button-primary-background, 3%);
+
+@button-success-background:                             @global-success-background;
+@button-success-color:                                  @global-contrast-color;
+@button-success-hover-background:                       darken(@button-success-background, 3%);
+
+@button-danger-background:                              @global-danger-background;
+@button-danger-color:                                   @global-contrast-color;
+@button-danger-hover-background:                        darken(@button-danger-background, 3%);
+
+
+//
+// Offcanvas
+//
+
+@offcanvas-background:                                  fade(@offcanvas-bar-background, 30%);
+
+@offcanvas-bar-background:                              #222;
+
+@offcanvas-panel-color:                                 @global-color;
+@offcanvas-panel-title-color:                           @global-contrast-color;
+@offcanvas-panel-link-color:                            @global-contrast-color;
+@offcanvas-panel-link-hover-color:                      lighten(@global-link-color, 15%);
+
+
+// Theme variables
+// ========================================================================
+
+@global-body-style:                                     'green';
+
+@theme-body-background:                                 #f6f6f2;
+
+
+//
+// Sidebar
+//
+
+@theme-sidebar-navbar-nav-border:                       rgba(255,255,255,0.12);
+@theme-sidebar-navbar-nav-color:                        @global-contrast-color;
+@theme-sidebar-navbar-nav-hover-color:                  @global-contrast-color;
+@theme-sidebar-navbar-nav-onclick-color:                @theme-sidebar-navbar-nav-active-color;
+@theme-sidebar-navbar-nav-active-color:                 #fffbd7;
+
+@theme-sidebar-navbar-nav-before-background:            rgba(255,255,255,0.3);
+
+@theme-sidebar-navbar-nav-before-hover-background:      @theme-sidebar-navbar-nav-active-color;
+
+@theme-sidebar-navbar-nav-before-active-background:     @theme-sidebar-navbar-nav-active-color;
+
+@theme-sidebar-panel-title-color:                       @theme-sidebar-navbar-nav-active-color;
+@theme-sidebar-panel-color:                             @global-contrast-color;
+@theme-sidebar-panel-link-color:                        @theme-sidebar-panel-title-color;
+@theme-sidebar-panel-link-hover-color:                  @global-contrast-color;
+
+@theme-sidebar-social-border-top:                       rgba(0,0,0,0);
+@theme-sidebar-social-background:                       rgba(0,0,0,0.2);
+@theme-sidebar-social-color:                            @global-contrast-color;
+@theme-sidebar-social-hover-color:                      @theme-sidebar-panel-title-color;

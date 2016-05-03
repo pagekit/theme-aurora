@@ -7,63 +7,65 @@
 // Variables
 // ========================================================================
 
+@form-padding:                                  5px 8px;
+@form-small-padding:                            4px;
+@form-large-padding:                            8px 12px;
 @form-height:                                   @global-height;
-@form-border:                                   @global-border;
-@form-background:                               @global-background;
-@form-color:                                    @global-color;
-
-@form-focus-border:                             @global-primary-background;
-@form-focus-background:                         @global-background;
-@form-focus-color:                              @global-color;
-
-@form-disabled-border:                          @global-border;
-@form-disabled-background:                      #fafafa;
-@form-disabled-color:                           @global-muted-color;
-
-@form-placeholder-color:                        @global-muted-color;
-
-@form-gutter:                                   @global-margin;
-
-@form-legend-border:                            @global-border;
-@form-legend-font-size:                         round((@global-font-size * 1.28)); // 18px / 20px
-@form-legend-line-height:                       round((@form-legend-font-size * 1.68)); // 30px / 34px
-
 @form-small-height:                             @global-height-small;
 @form-large-height:                             @global-height-large;
-@form-small-font-size:                          round((@global-font-size * 0.85)); // 12px / 14px
-@form-large-font-size:                          round((@global-font-size * 1.14)); // 16px / 18px
+
+@form-small-font-size:                          round((@global-font-size * 0.8)); // 12px
+@form-large-font-size:                          round((@global-font-size * 1.13)); // 17px
+
+@form-border:                                   @global-border;
+@form-border-width:                             @global-border-width;
+@form-background:                               @global-background;
+@form-color:                                    @global-color;
+@form-placeholder-color:                        @global-muted-color;
+@form-focus-border:                             @global-highlight-background;
+@form-focus-background:                         @global-background;
+@form-focus-color:                              @global-highlight-color;
+
+@form-disabled-border:                          @global-border;
+@form-disabled-background:                      @global-light-background;
+@form-disabled-color:                           @global-muted-color;
 
 @form-danger-border:                            @global-danger-background;
 @form-danger-background:                        @global-background;
-@form-danger-color:                             @global-color;
+@form-danger-color:                             @global-danger-color;
 
 @form-success-border:                           @global-success-background;
 @form-success-background:                       @global-background;
-@form-success-color:                            @global-color;
+@form-success-color:                            @global-success-color;
 
 @form-blank-border:                             @global-border;
 
-@form-stacked-margin-bottom:                    10px;
-@form-stacked-font-weight:                      normal;
+@form-legend-border:                            @global-border;
+@form-legend-border-width:                      @global-border-width;
+@form-legend-font-size:                         round((@global-font-size * 1.28)); // 18px
+@form-legend-line-height:                       round((@form-legend-font-size * 1.66)); // 30px
 
-@form-horizontal-label-margin-top:              7px;
-@form-horizontal-controls-text-padding-top:     7px;
+@form-gutter:                                   @global-margin;
 
+@form-icon-width:                               @global-height;
 @form-icon-font-size:                           @global-font-size;
 @form-icon-color:                               @global-muted-color;
+
 
 //
 // New
 //
 
-@form-stacked-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
-@form-stacked-line-height:                      round((@form-stacked-font-size *  1.46)); // 18px / 20px
+@form-border-radius:                            @global-border-radius;
 
 
 // Component
 // ========================================================================
 
-.hook-form() {}
+.hook-form() {
+    border-radius: @form-border-radius;
+    font-weight: inherit;
+}
 
 // Focus state
 .hook-form-focus() {}
@@ -95,17 +97,13 @@
 // ========================================================================
 
 .hook-form-blank() {}
-
 .hook-form-blank-focus() {}
 
 
 // Sub-object: `uk-form-label`
 // ========================================================================
 
-.hook-form-stacked-label() {
-    font-size: @form-stacked-font-size;
-    line-height: @form-stacked-line-height;
-}
+.hook-form-stacked-label() {}
 
 .hook-form-horizontal-label() {}
 
@@ -113,11 +111,4 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-form-misc() {
-
-    .uk-form-help-block {
-        color: @global-muted-color;
-        font-style: italic;
-    }
-
-}
+.hook-form-misc() {}

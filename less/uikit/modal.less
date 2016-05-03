@@ -7,19 +7,16 @@
 // Variables
 // ========================================================================
 
-@modal-z-index:                                 @global-z-index + 10;
-@modal-background:                              rgba(0,0,0,0.5);
+@modal-z-index:                                 (@global-z-index + 10);
 
-@modal-dialog-padding:                          40px;
 @modal-dialog-background:                       @global-background;
 
-@modal-dialog-large-width-large:                1120px;
+//
+// New
+//
 
-@modal-header-margin-bottom:                    @modal-dialog-padding;
-
-@modal-footer-margin-top:                       @modal-dialog-padding;
-
-@modal-caption-color:                           @global-contrast-color;
+@modal-close-size:                              42px;
+@modal-close-icon-size:                         24px;
 
 
 // Component
@@ -34,66 +31,17 @@
 .hook-modal-dialog() {}
 
 
-// Modifier: `uk-modal-dialog-lightbox`
-// ========================================================================
-
-.hook-modal-dialog-lightbox() {}
-
-
-// Sub-object: `uk-modal-header`
-// ========================================================================
-
-.hook-modal-header() { margin-bottom: @modal-header-margin-bottom; }
-
-
-// Sub-object: `uk-modal-footer`
-// ========================================================================
-
-.hook-modal-footer() {
-    margin: @modal-footer-margin-top -@modal-dialog-padding -@modal-dialog-padding -@modal-dialog-padding !important;
-    padding: 15px @modal-dialog-padding;
-    background: fade(@global-default-background, 30%);
-    border-top: 1px solid @global-border;
-}
-
-
-// Sub-object: `uk-modal-caption`
-// ========================================================================
-
-.hook-modal-caption() {}
-
-
-// Sub-object: `uk-modal-spinner`
-// ========================================================================
-
-.hook-modal-spinner() {}
-
-
 // Miscellaneous
 // ========================================================================
 
 .hook-modal-misc() {
 
-    .uk-modal-dialog-lightbox > .uk-close:not(.uk-close-alt):first-child {
-        top: -25px;
-        right: -25px;
+    // Close icon size for uk-modal-blank
+    .uk-modal-dialog-blank .uk-modal-close {
+        width: @modal-close-size;
+        line-height: @modal-close-size;
     }
 
-    .uk-modal-dialog-lightbox > .uk-close:not(.uk-close-alt):after { background: url("@{global-image-path}/close-contrast.svg") 0 0 no-repeat; }
-
-    .uk-modal-dialog-blank > .uk-close:first-child {
-        top: 0;
-        right: 0;
-        width: 50px;
-        opacity: 1;
-    }
-
-    .uk-modal-dialog-blank > .uk-close:first-child:after {
-        width: 50px;
-        height: 50px;
-        background: @global-color url("@{global-image-path}/close-contrast.svg") 50% 50% no-repeat;
-    }
-
-    .uk-modal-dialog-blank > .uk-close:first-child:hover:after { background-color: @global-dark-color; }
+    .uk-modal-dialog-blank .uk-modal-close::after { font-size: @modal-close-icon-size; }
 
 }

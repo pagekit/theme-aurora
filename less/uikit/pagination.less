@@ -7,21 +7,33 @@
 // Variables
 // ========================================================================
 
-@pagination-padding-vertical:                   5px;
-@pagination-padding-horizontal:                 5px;
 @pagination-line-height:                        @global-line-height;
-@pagination-background:                         transparent;
-@pagination-color:                              @global-muted-color;
-@pagination-hover-background:                   transparent;
-@pagination-hover-color:                        @global-dark-color;
-@pagination-onclick-background:                 transparent;
-@pagination-onclick-color:                      @global-dark-color;
+@pagination-background:                         rgba(0,0,0,0);
+@pagination-color:                              @global-color;
+@pagination-hover-background:                   @pagination-background;
+@pagination-hover-color:                        @global-primary-background;
+@pagination-onclick-background:                 @global-primary-background;
+@pagination-onclick-color:                      @global-contrast-color;
 
-@pagination-active-background:                  transparent;
-@pagination-active-color:                       @global-dark-color;
+@pagination-active-background:                  @global-primary-background;
+@pagination-active-color:                       @global-contrast-color;
 
-@pagination-disabled-background:                transparent;
+@pagination-disabled-background:                fade(@global-light-background, 70%);
 @pagination-disabled-color:                     @global-muted-color;
+
+
+//
+// New
+//
+
+@pagination-border-width:                       @global-border-width;
+@pagination-border:                             @global-border;
+@pagination-hover-border:                       @global-primary-background;
+@pagination-onlick-border:                      @global-primary-background;
+@pagination-active-border:                      @global-primary-background;
+@pagination-disabled-border:                    @global-border;
+@pagination-border-radius:                      0;
+@pagination-item-border-radius:                 50%;
 
 
 // Component
@@ -31,20 +43,20 @@
 // Items
 //
 
-.hook-pagination-item() {}
+.hook-pagination-item() { border-radius: @pagination-item-border-radius; }
 
 // Link
-.hook-pagination-link() {}
+.hook-pagination-link() { border: @pagination-border-width solid @pagination-border; }
 
-.hook-pagination-link-hover() {}
+.hook-pagination-link-hover() { border-color: @pagination-hover-border; }
 
-.hook-pagination-link-active() {}
+.hook-pagination-link-active() { border-color: @pagination-onlick-border; }
 
 // Active
-.hook-pagination-active() {}
+.hook-pagination-active() { border: @pagination-border-width solid @pagination-active-border; }
 
 // Disabled
-.hook-pagination-disabled() {}
+.hook-pagination-disabled() { border: @pagination-border-width solid @pagination-disabled-border; }
 
 
 // Miscellaneous
@@ -52,7 +64,21 @@
 
 .hook-pagination-misc() {
 
-    .uk-pagination-previous > *,
-    .uk-pagination-next > * { padding: @pagination-padding-vertical 0 !important; }
+    .uk-pagination {
+
+        .uk-pagination-previous > a,
+        .uk-pagination-previous > span,
+        .uk-pagination-next > a,
+        .uk-pagination-next > span {
+
+            border: none !important;
+            border-radius: @pagination-border-radius;
+            background: rgba(0,0,0,0);
+
+            &:hover { text-decoration: underline; }
+
+        }
+
+    }
 
 }

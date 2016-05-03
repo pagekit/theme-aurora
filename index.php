@@ -10,7 +10,8 @@ return [
     'menus' => [
 
         'main' => 'Main',
-        'offcanvas' => 'Offcanvas'
+        'offcanvas' => 'Offcanvas',
+        'footer' => 'Footer'
 
     ],
 
@@ -19,12 +20,24 @@ return [
      */
     'positions' => [
 
+        'toolbar' => 'Toolbar',
         'navbar' => 'Navbar',
         'hero' => 'Hero',
-        'top' => 'Top',
+        'content_top' => 'Content Top',
+        'top' => 'Top A',
+        'top_b' => 'Top B',
+        'top_c' => 'Top C',
+        'top_d' => 'Top D',
         'sidebar' => 'Sidebar',
-        'bottom' => 'Bottom',
+        'bottom' => 'Bottom A',
+        'bottom_b' => 'Bottom B',
+        'bottom_c' => 'Bottom C',
+        'bottom_d' => 'Bottom D',
+        'content_bottom' => 'Content Bottom',
         'footer' => 'Footer',
+        'sidebar_menu' => 'Sidebar Menu',
+        'sidebar_main' => 'Sidebar Main',
+        'sidebar_social' => 'Sidebar Social',
         'offcanvas' => 'Offcanvas'
 
     ],
@@ -40,13 +53,28 @@ return [
         'html_class' => '',
         'sidebar_first' => false,
         'hero_image' => '',
+        'hero_style' => 'uk-block-default',
+        'hero_blend' => '',
         'hero_viewport' => '',
         'hero_contrast' => '',
         'hero_parallax' => '',
-        'navbar_transparent' => '',
+        'section_divider' => false,
+        'sidebar_width' => '30',
+        'sidebar_parallax' => true,
+        'sidebar_background_fixed' => true,
+        'totop_scroller' => true,
+        'content_top_style' => 'uk-block-muted',
         'top_style' => 'uk-block-muted',
+        'top_b_style' => 'uk-block-default',
+        'top_c_style' => 'uk-block-muted',
+        'top_d_style' => 'uk-block-default',
         'main_style' => 'uk-block-default',
-        'bottom_style' => 'uk-block-muted'
+        'bottom_style' => 'uk-block-muted',
+        'bottom_b_style' => 'uk-block-default',
+        'bottom_c_style' => 'uk-block-secondary uk-contrast',
+        'bottom_d_style' => 'uk-block-primary uk-contrast',
+        'content_bottom_style' => 'uk-block-muted',
+        'footer_style' => 'uk-block-secondary uk-contrast'
 
     ],
 
@@ -73,7 +101,8 @@ return [
      */
     'config' => [
 
-        'logo_contrast' => '',
+        'style' => '',
+        'logo_small' => '',
         'logo_offcanvas' => ''
 
     ],
@@ -123,29 +152,6 @@ return [
                 $classes['hero'] = 'tm-hero-height';
             }
 
-            // Sticky overlay navbar if hero position exists
-            if ($params['navbar_transparent'] && $view->position()->exists('hero') && $params['hero_image']) {
-
-                $sticky['top'] = '.uk-sticky-placeholder + *';
-                $classes['navbar'] .= ' tm-navbar-overlay tm-navbar-transparent';
-
-                if ($params['hero_viewport']) {
-                    $classes['hero'] = 'uk-height-viewport';
-                } else {
-                    $classes['hero'] = 'tm-hero-padding';
-                }
-
-                if ($params['hero_contrast']) {
-
-                    $sticky['clsinactive'] = 'tm-navbar-transparent tm-navbar-contrast';
-                    $classes['navbar'] .= ' tm-navbar-contrast';
-
-                } else {
-                    $sticky['clsinactive'] = 'tm-navbar-transparent';
-                }
-
-            }
-
             if ($params['hero_parallax'] && $view->position()->exists('hero') && $params['hero_image']) {
                 $classes['parallax'] = 'data-uk-parallax="{bg: \'-400\'}"';
             }
@@ -154,7 +160,35 @@ return [
                 $classes['hero'] .= ' uk-contrast';
             }
 
+            if ($params['hero_style']) {
+                $classes['hero'] .= ' '.$params['hero_style'];
+            }
+
+            if ($params['hero_blend'] && $params['hero_image']) {
+                $classes['hero'] .= ' tm-background-blend-'.$params['hero_blend'];
+            }
+
             $classes['sticky'] = 'data-uk-sticky=\''.json_encode($sticky).'\'';
+
+            if ($params['section_divider']) {
+                $classes['body'][] = 'tm-section-divider';
+            }
+
+            if ($params['sidebar_width']) {
+                $classes['body'][] = 'tm-sidebar-width-'.$params['sidebar_width'];
+            }
+
+            if ($params['sidebar_parallax']) {
+                $classes['body'][] = 'tm-sidebar-parallax';
+            }
+
+            if ($params['sidebar_background_fixed']) {
+                $classes['body'][] = 'tm-sidebar-background-fixed';
+            }
+
+            if (key_exists('body', $classes)) {
+                $classes['body'] = sprintf('class="%s"', trim(implode(' ', $classes['body'])));
+            }
 
             $params['classes'] = $classes;
         },

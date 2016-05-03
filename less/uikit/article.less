@@ -7,20 +7,20 @@
 // Variables
 // ========================================================================
 
-@article-margin-top:                            80px;
+@article-margin-top:                            @global-margin-large;
 
-@article-title-font-size:                       round((@global-font-size * 2.6)); // 36px / 42px
-@article-title-line-height:                     round((@article-title-font-size * 1.154)); // 42px / 48px
-@article-title-font-weight:                     300;
+@article-title-font-size:                       round((@global-font-size * 2.13)); // 34px
+@article-title-line-height:                     round((@article-title-font-size * 1.29)); // 44px
 
-@article-meta-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
-@article-meta-line-height:                      round((@article-meta-font-size * 1.46)); // 18px / 20px
+@article-meta-font-size:                        round((@global-font-size * 0.93)); // 14px
+@article-meta-line-height:                      round((@article-meta-font-size * 1.28)); // 18px
+@article-title-font-weight:                     @global-heading-font-weight;
 @article-meta-color:                            @global-muted-color;
 
 @article-lead-color:                            @global-color;
-@article-lead-font-size:                        round((@global-font-size * 1.4)); // 20px / 22px
-@article-lead-line-height:                      round((@article-lead-font-size * 1.28)); // 26px / 28px
-@article-lead-font-weight:                      300;
+@article-lead-font-size:                        round((@global-font-size * 1.46)); // 22px
+@article-lead-line-height:                      round((@article-lead-font-size * 1.36)); // 30px
+@article-lead-font-weight:                      @global-font-weight;
 
 @article-divider-margin:                        @global-margin-large;
 @article-divider-border:                        @global-border;
@@ -35,16 +35,7 @@
 // Sub-object `uk-article-meta`
 // ========================================================================
 
-.hook-article-meta() {
-
-    a { color: @article-meta-color; }
-
-    a:hover {
-        color: @global-link-hover-color;
-        text-decoration: none;
-    }
-
-}
+.hook-article-meta() {}
 
 
 // Sub-object `uk-article-lead`
@@ -62,22 +53,4 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-article-misc() {
-
-    .uk-article + .uk-article {
-        padding-top: @article-margin-top;
-        border-top: 1px solid @global-border;
-    }
-
-    /* Tablet and bigger */
-    @media (min-width: @breakpoint-medium) {
-        .uk-article + .uk-article {
-            margin-top: (@article-margin-top + 50px);
-            padding-top: (@article-margin-top + 50px);
-        }
-    }
-
-    .uk-article .uk-subnav a:hover,
-    .uk-article .uk-subnav a:focus { text-decoration: underline; }
-
-}
+.hook-article-misc() {}

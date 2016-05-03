@@ -8,10 +8,10 @@
 // ========================================================================
 
 @progress-margin-vertical:                      @global-margin;
-@progress-background:                           @global-default-background;
+@progress-background:                           @global-light-background;
 
 @progress-bar-background:                       @global-primary-background;
-@progress-bar-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
+@progress-bar-font-size:                        round((@global-font-size * 0.85)); // 12px
 @progress-bar-color:                            @global-contrast-color;
 
 @progress-bar-success-background:               @global-success-background;
@@ -19,26 +19,40 @@
 @progress-bar-danger-background:                @global-danger-background;
 
 
+//
+// New
+//
+
+@progress-border-radius:                        @global-border-radius;
+
+@progress-bar-success-color:                    @global-contrast-color;
+@progress-bar-warning-color:                    @global-contrast-color;
+@progress-bar-danger-color:                     @global-contrast-color;
+
+
 // Component
 // ========================================================================
 
-.hook-progress() { border-radius: 500px; }
+.hook-progress() { border-radius: @progress-border-radius; }
 
 
 // Sub-object: `progress-bar`
 // ========================================================================
 
-.hook-progress-bar() {}
+.hook-progress-bar() {
+    padding-right: 8px;
+    text-align: right;
+}
 
 
 // Color modifiers
 // ========================================================================
 
-.hook-progress-bar-success() {}
+.hook-progress-bar-success() { color: @progress-bar-success-color; }
 
-.hook-progress-bar-warning() {}
+.hook-progress-bar-warning() { color: @progress-bar-warning-color; }
 
-.hook-progress-bar-danger() {}
+.hook-progress-bar-danger() { color: @progress-bar-danger-color; }
 
 
 // Miscellaneous
