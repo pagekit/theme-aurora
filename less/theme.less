@@ -20,10 +20,6 @@
 
 @theme-wrapper-width-max:                               1450px;
 
-@theme-section-margin:                                  @global-margin-extra-large;
-@theme-section-border-width:                            @global-border-width;
-@theme-section-border:                                  @global-border;
-
 @theme-ripple-background:                               rgba(255, 255, 255, 0.3);
 
 
@@ -396,24 +392,6 @@ body { background: @theme-body-background; }
 
 }
 
-// Section Divider (Warp option)
-.tm-grid-divider {
-    margin: 0;
-    border-top: none;
-}
-
-.tm-section-divider {
-
-    section + .tm-grid-divider,
-    .tm-middle + .tm-grid-divider {
-        display: block;
-        margin-top: @theme-section-margin;
-        margin-bottom: @theme-section-margin;
-        border-top: @theme-section-border-width solid @theme-section-border;
-    }
-
-}
-
 // Content
 .tm-content-wrapper {
 
@@ -429,6 +407,9 @@ body { background: @theme-body-background; }
 
 }
 
+// Removing the padding top for the first uk-block
+.tm-content-container > .uk-block:first-child { padding-top: 0; }
+
 // Additional content blocks
 .tm-block-content-top,
 .tm-block-content-bottom {
@@ -442,21 +423,6 @@ body { background: @theme-body-background; }
 .tm-block-footer {
     padding: @theme-content-container-padding;
     border-top: @theme-border-width solid @theme-content-block-border;
-}
-
-// Hide / Show WordPress page title (Warp Option)
-.tm-page-title-false {
-
-    .tm-content {
-
-        .uk-article {
-
-            .uk-article-title { display: none; }
-
-        }
-
-    }
-
 }
 
 // If footer is published add some padding to the content
@@ -510,6 +476,9 @@ body { background: @theme-body-background; }
     overflow: hidden;
 }
 
+// Footer menu
+.tm-footer .uk-subnav { margin-bottom: 0; }
+
 .tm-footer .uk-panel + .uk-panel { margin-top: @global-grid-gutter; }
 
 // To-top scroller
@@ -550,7 +519,6 @@ body { background: @theme-body-background; }
 
     }
 
-
 }
 
 
@@ -578,16 +546,6 @@ body { background: @theme-body-background; }
 
 // Only phones
 @media (max-width: @breakpoint-small-max) {
-
-    // Section Divider
-    .tm-section-divider {
-
-        .tm-grid-divider {
-            margin-top: (@theme-section-margin / 2);
-            margin-bottom: (@theme-section-margin / 2);
-        }
-
-    }
 
     // Small padding
     .tm-wrapper {
@@ -618,78 +576,13 @@ body { background: @theme-body-background; }
 }
 
 // Remove padding from Content-Top and Content-Bottom (Warp Option)
-.tm-ct-spacing-false {
+.tm-content-top-padding-false { padding: 0 !important; }
 
-    .tm-block-content-top { padding: 0 !important; }
-
-}
-
-.tm-cb-spacing-false {
-
-    .tm-block-content-bottom { padding: 0 !important; }
-
-}
-
-/* Dropdown stack
- ========================================================================== */
-
-// Reset width if column width is set
-.uk-dropdown-navbar.uk-dropdown-stack {
-    min-width: 0 !important;
-    max-width: none !important;
-}
+.tm-content-bottom-spacing-false { padding: 0 !important; }
 
 
 /* Additional
  ========================================================================== */
-
-// YOOtheme font
-@font-face {
-    font-family: 'yootheme';
-    src:url('../fonts/yootheme.eot?-fkrq72');
-    src:url('../fonts/yootheme.eot?#iefix-fkrq72') format('embedded-opentype'),
-        url('../fonts/yootheme.woff?-fkrq72') format('woff'),
-        url('../fonts/yootheme.ttf?-fkrq72') format('truetype'),
-        url('../fonts/yootheme.svg?-fkrq72#yootheme') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="tm-icon-yootheme-"],
-[class*=" tm-icon-yootheme-"] {
-    font-family: 'yootheme';
-    speak: none;
-    font-size: 72px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    // Better Font Rendering
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-// Icons
-.tm-icon-yootheme-cart::before { content: "\e600"; }
-.tm-icon-yootheme-css3::before { content: "\e601"; }
-.tm-icon-yootheme-github1::before { content: "\e602"; }
-.tm-icon-yootheme-github2::before { content: "\e603"; }
-.tm-icon-yootheme-html5::before { content: "\e604"; }
-.tm-icon-yootheme-joomla::before { content: "\e605"; }
-.tm-icon-yootheme-jquery::before { content: "\e606"; }
-.tm-icon-yootheme-less::before { content: "\e607"; }
-.tm-icon-yootheme-symfony::before { content: "\e608"; }
-.tm-icon-yootheme-twitter::before { content: "\e609"; }
-.tm-icon-yootheme-wordpress::before { content: "\e60a"; }
-.tm-icon-yootheme-zoo::before { content: "\e60b"; }
-.tm-icon-yootheme-yoo::before { content: "\e60c"; }
-.tm-icon-yootheme-widgetkit::before { content: "\e60d"; }
-.tm-icon-yootheme-warp::before { content: "\e60e"; }
-.tm-icon-yootheme-uikit::before { content: "\e60f"; }
-.tm-icon-yootheme-pagekit::before { content: "\e610"; }
-
 
 // About switcher widget
 .tm-about {
@@ -736,6 +629,9 @@ body { background: @theme-body-background; }
 // Underlined text in the frontpage intro
 .tm-underlined { border-bottom: (@theme-border-width * 2) solid @global-link-color; }
 
+// Icon size
+.tm-icon-large [class*='uk-icon-'] { font-size: 68px; }
+
 // Ripple Effect for UI elements (JavaScript placed in yoo_aurora/js/theme.js)
 // Elements for the ripple effect
 .uk-navbar-nav li > a,
@@ -779,11 +675,7 @@ body { background: @theme-body-background; }
 
 }
 
-
-/* Widgetkit 2
-========================================================================== */
-
-// Caption effect for Widgetkit 2 custom widget: Grid Aurora widget
+// Caption effect for Grid Aurora
 .tm-caption {
 
     position: relative;
@@ -893,75 +785,6 @@ body { background: @theme-body-background; }
 
     .uk-article-lead { color: @global-contrast-color; }
 
-}
-
-
-/* Blog
- ========================================================================== */
-
-// Leading article Joomla only
-.uk-article + .uk-article {
-    margin-top: @global-grid-gutter-large;
-    padding-top: @global-grid-gutter-large;
-    border-top: @global-border-width solid @global-border;
-}
-
-/* Joomla only */
-.tm-leading-article .uk-article:last-child {
-    margin-bottom: 0;
-    padding-bottom: @global-grid-gutter-large;
-    border-bottom: @global-border-width solid @global-border;
-}
-
-
-
-/* Error
- ========================================================================== */
-
-.tm-error-icon { font-size: 250px; }
-
-.tm-error-headline { font-size: 100px; }
-
-
-/* Offline
- ========================================================================== */
-
-.tm-offline { width: 300px; }
-
-
-/* Socialbuttons
- ========================================================================== */
-
-.tm-socialbuttons {
-
-    line-height: 1;
-
-    > div {
-        margin-right: 10px;
-        float: left;
-    }
-}
-
-
-/* WordPress only
- ========================================================================== */
-
-.alignleft {
-    display: block;
-    margin-right: @utility-align-horizontal;
-    float: left;
-}
-
-.alignright {
-    display: block;
-    margin-left: @utility-align-horizontal;
-    float: right;
-}
-
-.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 

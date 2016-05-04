@@ -7,10 +7,24 @@
 // Variables
 // ========================================================================
 
+@block-padding-vertical:                        @global-grid-gutter-large;
+@block-padding-vertical-large:                  60px;
+
+@block-large-padding-vertical:                  @block-padding-vertical;
+@block-large-padding-vertical-medium:           @block-padding-vertical-large;
+@block-large-padding-vertical-large:            60px;
+
 @block-default-background:                      @global-background;
 @block-muted-background:                        @global-light-background;
 @block-primary-background:                      @global-primary-background;
 @block-secondary-background:                    @global-highlight-background;
+
+//
+// New
+//
+
+@block-border-width:                            @global-border-width;
+@block-border:                                  @global-border;
 
 
 // Component
@@ -40,10 +54,7 @@
     // Adjust padding between equal colored blocks
     //
 
-    .uk-block-default + .uk-block-default,
-    .uk-block-muted + .uk-block-muted,
-    .uk-block-primary + .uk-block-primary,
-    .uk-block-secondary + .uk-block-secondary { padding-top: 0; }
+    // Adding a border when two blocks of the same style follow each other
+    .uk-block-default + .uk-block-default { border-top: @block-border-width solid @block-border; }
 
 }
-

@@ -53,8 +53,6 @@ return [
         'html_class' => '',
         'sidebar_first' => false,
         'hero_image' => '',
-        'hero_style' => 'uk-block-default',
-        'hero_blend' => '',
         'hero_viewport' => '',
         'hero_contrast' => '',
         'hero_parallax' => '',
@@ -63,18 +61,8 @@ return [
         'sidebar_parallax' => true,
         'sidebar_background_fixed' => true,
         'totop_scroller' => true,
-        'content_top_style' => 'uk-block-muted',
-        'top_style' => 'uk-block-muted',
-        'top_b_style' => 'uk-block-default',
-        'top_c_style' => 'uk-block-muted',
-        'top_d_style' => 'uk-block-default',
-        'main_style' => 'uk-block-default',
-        'bottom_style' => 'uk-block-muted',
-        'bottom_b_style' => 'uk-block-default',
-        'bottom_c_style' => 'uk-block-secondary uk-contrast',
-        'bottom_d_style' => 'uk-block-primary uk-contrast',
-        'content_bottom_style' => 'uk-block-muted',
-        'footer_style' => 'uk-block-secondary uk-contrast'
+        'content_top_padding' => true,
+        'content_bottom_padding' => true
 
     ],
 
@@ -158,14 +146,6 @@ return [
 
             if ($params['hero_contrast'] && $params['hero_image']) {
                 $classes['hero'] .= ' uk-contrast';
-            }
-
-            if ($params['hero_style']) {
-                $classes['hero'] .= ' '.$params['hero_style'];
-            }
-
-            if ($params['hero_blend'] && $params['hero_image']) {
-                $classes['hero'] .= ' tm-background-blend-'.$params['hero_blend'];
             }
 
             $classes['sticky'] = 'data-uk-sticky=\''.json_encode($sticky).'\'';
