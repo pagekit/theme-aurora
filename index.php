@@ -56,8 +56,8 @@ return [
         'hero_viewport' => '',
         'hero_contrast' => '',
         'hero_parallax' => '',
-        'section_divider' => false,
-        'sidebar_width' => '30',
+        'section_divider' => true,
+        'sidebar_width' => '40',
         'sidebar_parallax' => true,
         'sidebar_background_fixed' => true,
         'totop_scroller' => true,
@@ -132,7 +132,7 @@ return [
 
             $sticky = [
                 'media' => 767,
-                'showup' => true,
+                'showup' => false,
                 'animation' => 'uk-animation-slide-top'
             ];
 

@@ -236,7 +236,7 @@
 
         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
        <div id="offcanvas" class="uk-offcanvas">
-           <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+           <div class="uk-offcanvas-bar">
 
                <?php if ($params['logo_offcanvas']) : ?>
                <div class="uk-panel uk-text-center">
