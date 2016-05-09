@@ -1,6 +1,6 @@
 <?php $view->script('post', 'blog:app/bundle/post.js', 'vue') ?>
 
-<article class="uk-article tm-container-small">
+<article class="uk-article tm-article-blog">
 
     <h1 class="uk-article-title"><?= $post->title ?></h1>
 

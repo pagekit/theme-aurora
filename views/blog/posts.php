@@ -1,7 +1,7 @@
 <?php $view->script('posts', 'blog:app/bundle/posts.js', 'vue') ?>
 
 <?php foreach ($posts as $post) : ?>
-<article class="uk-article">
+<article class="uk-article tm-article-blog">
 
     <h1 class="uk-article-title"><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= $post->title ?></a></h1>
 
@@ -15,15 +15,15 @@
 
     <div class="uk-margin"><?= $post->excerpt ?: $post->content ?></div>
 
-    <div class="uk-margin-large-top">
+    <p>
         <?php if (isset($post->readmore) && $post->readmore || $post->excerpt) : ?>
-        <a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a>
+        <a class="uk-button uk-button-link tm-article-button-link" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a>
         <?php endif ?>
 
         <?php if ($post->isCommentable() || $post->comment_count) : ?>
-        <a href="<?= $view->url('@blog/id#comments', ['id' => $post->id]) ?>"><?= _c('{0} No comments|{1} %num% Comment|]1,Inf[ %num% Comments', $post->comment_count, ['%num%' => $post->comment_count]) ?></a>
+        <a class="uk-button uk-button-link tm-article-button-link" href="<?= $view->url('@blog/id#comments', ['id' => $post->id]) ?>"><?= _c('{0} No comments|{1} %num% Comment|]1,Inf[ %num% Comments', $post->comment_count, ['%num%' => $post->comment_count]) ?></a>
         <?php endif ?>
-    </div>
+    </p>
 
 </article>
 
