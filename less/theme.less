@@ -94,6 +94,15 @@ html { overflow-y: scroll; }
 
 body { background: @theme-body-background; }
 
+//
+// Blocks
+//
+
+.tm-hero-height { min-height: 100vh; }
+
+// Adding a border when two blocks of the same style follow each other
+.tm-section-divider .uk-block-default + .uk-block-default { border-top: @block-border-width solid @block-border; }
+
 // Theme Wrapper
 .tm-wrapper {
     min-height: 100vh;

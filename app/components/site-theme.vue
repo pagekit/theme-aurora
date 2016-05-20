@@ -41,6 +41,44 @@
             </div>
         </div>
 
+        <div class="uk-form-row">
+            <label class="uk-form-label">Sidebar {{ 'Position' | trans }}</label>
+            <div class="uk-form-controls uk-form-controls-text">
+                <p class="uk-form-controls-condensed">
+                   <select id="form-hero-style" class="uk-form-width-large" v-model="config.sidebar_width">
+                       <option value="15">{{ '15%' | trans }}</option>
+                       <option value="20">{{ '20%' | trans }}</option>
+                       <option value="25">{{ '25%' | trans }}</option>
+                       <option value="30">{{ '30%' | trans }}</option>
+                       <option value="33">{{ '33%' | trans }}</option>
+                       <option value="40">{{ '40%' | trans }}</option>
+                       <option value="50">{{ '50%' | trans }}</option>
+                   </select>
+               </p>
+               <p class="uk-form-help-block">{{ 'Select the sidebar width.' | trans }}</p>
+                <p class="uk-form-controls-condensed">
+                    <label><input type="checkbox" v-model="config.sidebar_parallax"> {{ 'Enable parallax effect' | trans }}</label>
+                </p>
+                <p class="uk-form-controls-condensed uk-margin-bottom">
+                    <label><input type="checkbox" v-model="config.sidebar_fixed"> {{ 'Fixed background position' | trans }}</label>
+                </p>
+            </div>
+        </div>
+
+        <div class="uk-form-row">
+            <span class="uk-form-label">{{ 'Section Divider' | trans }}</span>
+            <div class="uk-form-controls uk-form-controls-text">
+                <label><input type="checkbox" v-model="config.section_divider"> {{ 'Displays a divider between the layout sections.' | trans }}</label>
+            </div>
+        </div>
+
+        <div class="uk-form-row">
+            <span class="uk-form-label">{{ 'To-top Scroller' | trans }}</span>
+            <div class="uk-form-controls uk-form-controls-text">
+                <label><input type="checkbox" v-model="config.totop_scroller"> {{ 'Enable a to-top scroller.' | trans }}</label>
+            </div>
+        </div>
+
     </div>
 
 </template>

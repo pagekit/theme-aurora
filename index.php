@@ -56,11 +56,6 @@ return [
         'hero_viewport' => '',
         'hero_contrast' => '',
         'hero_parallax' => '',
-        'section_divider' => true,
-        'sidebar_width' => '40',
-        'sidebar_parallax' => true,
-        'sidebar_background_fixed' => true,
-        'totop_scroller' => true,
         'content_top_padding' => true,
         'content_bottom_padding' => true
 
@@ -91,7 +86,12 @@ return [
 
         'style' => '',
         'logo_small' => '',
-        'logo_offcanvas' => ''
+        'logo_offcanvas' => '',
+        'section_divider' => true,
+        'sidebar_width' => '40',
+        'sidebar_parallax' => true,
+        'sidebar_background_fixed' => true,
+        'totop_scroller' => true
 
     ],
 
