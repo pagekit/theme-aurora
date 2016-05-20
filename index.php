@@ -90,7 +90,7 @@ return [
         'section_divider' => true,
         'sidebar_width' => '40',
         'sidebar_parallax' => true,
-        'sidebar_background_fixed' => true,
+        'sidebar_fixed' => true,
         'totop_scroller' => true
 
     ],
@@ -162,7 +162,7 @@ return [
                 $classes['body'][] = 'tm-sidebar-parallax';
             }
 
-            if ($params['sidebar_background_fixed']) {
+            if ($params['sidebar_fixed']) {
                 $classes['body'][] = 'tm-sidebar-background-fixed';
             }
 
