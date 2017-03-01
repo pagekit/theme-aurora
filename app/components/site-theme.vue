@@ -45,10 +45,6 @@
             <span class="uk-form-label">{{ 'Navigation' | trans }}</span>
             <div class="uk-form-controls uk-form-controls-text">
                 <p class="uk-form-controls-condensed">
-                    <label><input type="checkbox"
-                                  v-model="config.navbar_sticky"> {{ 'Sticky Navigation' | trans }}</label>
-                </p>
-                <p class="uk-form-controls-condensed">
                     <label>{{ 'Main menu depth' | trans }} <input type="number" v-model.number="config.menu_depth"
                                                                   class="uk-form-small uk-form-width-mini"
                                                                   number></label>
