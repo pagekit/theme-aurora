@@ -6,7 +6,7 @@
     <li class="<?= $node->hasChildren() ? 'uk-parent' : '' ?><?= $node->get('active') ? ' uk-active' : '' ?>" <?= ($root->getDepth() === 0 && $node->hasChildren()) ? 'data-uk-dropdown':'' ?>>
         <a href="<?= $node->getUrl() ?>"><?= $node->title ?></a>
 
-        <?php if ($node->hasChildren()) : ?>
+		<?php if ($node->hasChildren() && $root->getDepth() < $params['menu_depth']) : ?>
 
             <?php if ($root->getDepth() === 0) : ?>
             <div class="uk-dropdown uk-dropdown-navbar">
