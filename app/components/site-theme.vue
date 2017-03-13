@@ -40,7 +40,18 @@
                 <p class="uk-form-help-block">{{ 'Select an optional logo for the off-canvas menu.' | trans }}</p>
             </div>
         </div>
-
+        
+        <div class="uk-form-row">
+            <span class="uk-form-label">{{ 'Navigation' | trans }}</span>
+            <div class="uk-form-controls uk-form-controls-text">
+                <p class="uk-form-controls-condensed">
+                    <label>{{ 'Main menu depth' | trans }} <input type="number" v-model.number="config.menu_depth"
+                                                                  class="uk-form-small uk-form-width-mini"
+                                                                  number></label>
+                </p>
+            </div>
+        </div>
+        
         <div class="uk-form-row">
             <label class="uk-form-label">Sidebar {{ 'Position' | trans }}</label>
             <div class="uk-form-controls uk-form-controls-text">

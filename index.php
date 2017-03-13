@@ -91,8 +91,9 @@ return [
         'sidebar_width' => '40',
         'sidebar_parallax' => true,
         'sidebar_fixed' => true,
-        'totop_scroller' => true
-
+        'totop_scroller' => true,
+        'menu_depth' => 1
+        
     ],
 
     /**
